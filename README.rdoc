@@ -1,0 +1,40 @@
+= Intuit SAML 
+
+Allows a ruby-based web site to federate with the Intuit Parter Platform (more information available at https://ipp.developer.intuit.com/ipp/federated) and work with Intuit's single sign-on solution.
+
+== Description
+
+In order to federate a web application with Intuit's cloud environment, the Intuit Partner Platform, the app needs to provide a SAML gateway to handle incoming SAML responses from Intuit's outgoing SAML gateway.  
+
+== Install
+
+	gem install intuit-saml
+	
+=== Source
+	
+The source is available via SVN at the {Intuit open source repository}[https://code.intuit.com/sf/wiki/do/viewPage/projects.ipp_fed_auth/wiki/RubySAMLGateway].  It may be hosted on Github in the future-- check back for more information as we continue development.
+
+=== Dependencies
+
+Due to issues with the older openssl lib, intuit-saml requires Ruby 1.8.7.
+	
+== Creating a SAML Gateway
+
+Below are the general steps to using this gem to create your own SAML gateway so that you can federate with Intuit's cloud services and get access to user and company information.  Please note that currently this library is targeted ONLY at providing SAML response decryption and unpacking.  It does not currently provide model access to any of the IPP data, nor does it automate integration with your particular user authentication/authorization system.
+
+=== Summary 
+
+Once the gem is installed, you will have access to an Intuit::Saml class.  Use this class to decrypt the SAML Response from the Intuit outgoing gateway; inside you will find a <tt>ticket</tt> and an <tt>application_destination_url</tt>.  You can use the ticket to call back into IPP and retrieve information about the user and their company.
+	
+== Contributions
+
+Please consider joining the Intuit Open Source community at http://code.intuit.com to submit patches and enhancements for this gem. 
+
+== Authors
+
+intuit-saml was originally written by Nathan Smith.  Other contributors include:
+* Zachery Moneypenny
+
+== License
+
+This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.opensource.org/licenses/eclipse-1.0.php.  See accompanying LICENSE file for more information.

@@ -1,0 +1,13 @@
+PATH
+  remote: .
+  specs:
+    intuit-saml (0.1.0)
+
+GEM
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  intuit-saml!

@@ -1,0 +1,9 @@
+LICENSE
+Manifest
+README.rdoc
+Rakefile
+intuit-saml.gemspec
+lib/intuit-saml.rb
+spec/data/test-private.key
+spec/data/test-samlresponse.txt
+spec/intuit-saml_spec.rb
