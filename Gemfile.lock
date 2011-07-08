@@ -2,12 +2,29 @@ PATH
   remote: .
   specs:
     intuit-saml (0.1.0)
+      libxml-ruby
 
 GEM
+  remote: http://rubygems.org/
   specs:
+    allison (2.0.3)
+    echoe (4.6.1)
+      allison (>= 2.0.3)
+      gemcutter (>= 0.7.0)
+      rake (>= 0.9.2)
+      rdoc (>= 3.6.1)
+      rubyforge (>= 2.0.4)
+    gemcutter (0.7.0)
+    json_pure (1.5.3)
+    libxml-ruby (1.1.4)
+    rake (0.9.2)
+    rdoc (3.8)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  echoe
   intuit-saml!

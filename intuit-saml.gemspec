@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
   s.rubyforge_project = %q{intuit-saml}
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Allow sites federated with Intuit to process SAML auth requests}
-  s.add_dependency("libxml-ruby")
+  s.add_runtime_dependency "libxml-ruby"
+  s.add_development_dependency "echoe"
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
