@@ -24,11 +24,11 @@ describe Intuit::Saml do
       @saml.application_destination_url.should == "http://ids.whazzing.com/account"
     end
   
-    it "should have a auth_id(also known as an auth_id_pseudonym)" do
+    it "should have a auth_id(known as an auth_id_pseudonym)" do
       @saml.auth_id.should == "fb55d948-acbf-4960-9fb6-15b3647c7f5d"
     end
     
-    it "should have a realm_id(also known as a realm_id_pseudonym)" do
+    it "should have a realm_id(known as a realm_id_pseudonym)" do
       @saml.realm_id.should == "2bab4bdf-4015-4311-9ddc-32147f0177a3"
     end
     

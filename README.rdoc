@@ -22,6 +22,19 @@ Due to issues with the older openssl lib, intuit-saml requires Ruby 1.8.7.
 
 Below are the general steps to using this gem to create your own SAML gateway so that you can federate with Intuit's cloud services and get access to user and company information.  Please note that currently this library is targeted ONLY at providing SAML response decryption and unpacking.  It does not currently provide model access to any of the IPP data, nor does it automate integration with your particular user authentication/authorization system.
 
+=== Sample usage
+
+  saml = Intuit::Saml.new(
+    :saml_xml => Base64.decode64(params[:SAMLResponse]),
+    :private_key => File.read('/path/to/your/private-key.key')
+  )
+  
+  ticket = saml.ticket
+  target_url = saml.application_destination_url
+  auth_id = saml.auth_id # known as an auth_id_pseudonym
+  realm_id = saml.realm_id # known as a realm_id_pseudonym
+  provider_id = saml.provider_id # known as 'Federated Service Provider ID'
+
 === Summary 
 
 Once the gem is installed, you will have access to an Intuit::Saml class.  Use this class to decrypt the SAML Response from the Intuit outgoing gateway; inside you will find a <tt>ticket</tt> and an <tt>application_destination_url</tt>.  You can use the ticket to call back into IPP and retrieve information about the user and their company.
