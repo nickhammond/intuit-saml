@@ -28,7 +28,7 @@ Once the gem is installed, you will have access to an Intuit::Saml class.  Use t
 
 == Running tests
 
-To run tests just run spec spec/ from the project's root directory.
+To run tests just run "bundle exec rake" from the project's root directory.
 	
 == Contributions
 

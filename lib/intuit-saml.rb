@@ -102,6 +102,27 @@ module Intuit
       return @application_destination_url
     end
     
+    def auth_id
+      @auth_id = expected_saml_node_content( @saml_doc, '/samlp:Response/saml:Assertion/saml:Subject/saml:NameID' )
+       rescue Intuit::MissingExpectedSamlNode
+          raise NoAuthID.new
+      return @auth_id
+    end
+    
+    def realm_id
+      @auth_id = expected_saml_node_content( @saml_doc, '/samlp:Response/saml:Assertion/saml:AttributeStatement/saml:Attribute[@Name = "Intuit.Federation.realmIDPseudonym"]/saml:AttributeValue' )
+       rescue Intuit::MissingExpectedSamlNode
+          raise NoRealmID.new
+      return @realm_id
+    end
+    
+    def provider_id
+      @provider_id = expected_saml_node_content( @saml_doc, '/samlp:Response/saml:Assertion/saml:Conditions/saml:AudienceRestriction/saml:Audience' )
+       rescue Intuit::MissingExpectedSamlNode
+          raise ProviderID.new
+      return @provider_id
+    end
+    
     # returns a hash full of intermediate data for debugging purposes
     def debug_info
       return {
@@ -110,7 +131,7 @@ module Intuit
         :encrypted_ticket => @encrypted_ticket,
         :decrypted_key => @decrypted_key,
         :decrypted_ticket => @decrypted_ticket,
-        :ticket => @ticket,
+        :ticket => @ticket
       }
     end
     

@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Allow sites federated with Intuit to process SAML auth requests}
   s.add_runtime_dependency "libxml-ruby"
   s.add_development_dependency "echoe"
+  s.add_development_dependency "rspec"
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
