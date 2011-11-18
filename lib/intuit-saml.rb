@@ -123,6 +123,13 @@ module Intuit
       return @provider_id
     end
     
+    def signature
+      @signature = expected_saml_node_content( @saml_doc, '/samlp:Response/saml:Assertion/ds:Signature/ds:SignedInfo/ds:Reference/ds:DigestValue' )
+       rescue Intuit::MissingExpectedSamlNode
+          raise Signature.new
+      return @signature
+    end
+    
     # returns a hash full of intermediate data for debugging purposes
     def debug_info
       return {

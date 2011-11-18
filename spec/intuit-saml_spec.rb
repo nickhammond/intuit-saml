@@ -35,7 +35,10 @@ describe Intuit::Saml do
     it "should have a provider_id(known by Intuit as 'Federated Service Provider ID')" do
       @saml.provider_id.should == "zm.app.prod-intuit.ipp.prod"
     end
-  
+    
+    it "should have a signature value" do
+      @saml.signature.should == "FWcsIWdjAbKiKzSh2qLPAwK/rws="
+    end  
   end
   
   

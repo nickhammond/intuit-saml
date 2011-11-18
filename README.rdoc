@@ -34,6 +34,7 @@ Below are the general steps to using this gem to create your own SAML gateway so
   auth_id = saml.auth_id # known as an auth_id_pseudonym
   realm_id = saml.realm_id # known as a realm_id_pseudonym
   provider_id = saml.provider_id # known as 'Federated Service Provider ID'
+  signature = saml.signature
 
 === Summary 
 
