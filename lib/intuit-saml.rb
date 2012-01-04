@@ -110,7 +110,7 @@ module Intuit
     end
     
     def realm_id
-      @auth_id = expected_saml_node_content( @saml_doc, '/samlp:Response/saml:Assertion/saml:AttributeStatement/saml:Attribute[@Name = "Intuit.Federation.realmIDPseudonym"]/saml:AttributeValue' )
+      @auth_id = expected_saml_node_content( @saml_doc, '/samlp:Response/saml:Assertion/saml:AttributeStatement/saml:Attribute[@Name = "realmID"]/saml:AttributeValue' )
        rescue Intuit::MissingExpectedSamlNode
           raise NoRealmID.new
       return @realm_id

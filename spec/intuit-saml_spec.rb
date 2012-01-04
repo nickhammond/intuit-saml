@@ -29,7 +29,7 @@ describe Intuit::Saml do
     end
     
     it "should have a realm_id(known as a realm_id_pseudonym)" do
-      @saml.realm_id.should == "2bab4bdf-4015-4311-9ddc-32147f0177a3"
+      @saml.realm_id.should == "178403880"
     end
     
     it "should have a provider_id(known by Intuit as 'Federated Service Provider ID')" do
